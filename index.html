@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Thursday | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            background-color: #0a0a0a; /* Fallback color */
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+        }
+        
+        /* Typography Effects */
+        .gradient-text {
+            background: linear-gradient(to bottom, #ffffff, #888888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphism Buttons */
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .nav-btn:hover, .nav-btn:active {
+            border-color: #10b981; /* Green hover */
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        /* Cards with transparency for Lofi background */
+        .service-card, .project-card {
+            background: rgba(26, 26, 26, 0.6); 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px); /* Blur effect on cards */
+            transition: all 0.3s ease;
+        }
+        .service-card:active, .project-card:active {
+            transform: scale(0.98); /* Subtle press effect on mobile */
+        }
+        .service-card:hover {
+            border-color: #10b981;
+            transform: translateY(-2px);
+            background: rgba(26, 26, 26, 0.8);
+        }
+        
+        /* Desktop hover effect only */
+        @media (min-width: 768px) {
+            .project-card:hover {
+                border-color: #10b981;
+                transform: translateY(-5px);
+            }
+        }
+
+        /* View Toggle Animations */
+        .hidden-view {
+            display: none;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 relative min-h-screen">
+
+    <div class="fixed inset-0 -z-50 w-full h-full overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute w-full h-full object-cover opacity-60">
+            <source src="images/HB.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-black/85"></div>
+    </div>
+
+    <div id="home-view" class="fade-in relative z-10">
+        
+        <nav class="flex flex-col sm:flex-row flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-12">
+            <button onclick="showWork()" class="nav-btn w-full sm:w-auto justify-center px-6 py-3 md:py-2 rounded-full flex items-center gap-2 text-sm font-medium">
+                <i data-lucide="chevron-right" class="w-4 h-4 text-green-500 border border-green-500 rounded-full"></i> See my work
+            </button>
+            <button class="nav-btn w-full sm:w-auto justify-center px-6 py-3 md:py-2 rounded-full flex items-center gap-2 text-sm font-medium">
+                <i data-lucide="shopping-basket" class="w-4 h-4 text-green-500"></i> My catalog
+            </button>
+            <button class="nav-btn w-full sm:w-auto justify-center px-6 py-3 md:py-2 rounded-full flex items-center gap-2 text-sm font-medium">
+                <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Book a service
+            </button>
+        </nav>
+
+        <header class="relative max-w-5xl mx-auto text-center mb-12 md:mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-6 md:gap-8">
+                <div class="text-left hidden md:block">
+                    <div class="w-12 h-px bg-white mb-4"></div>
+                    <h2 class="text-2xl font-light leading-tight">Front End DEV /<br>Virtual Assistant</h2>
+                </div>
+
+                <div class="relative flex flex-col items-center">
+                    <div class="w-48 h-48 md:w-80 md:h-80 bg-neutral-800/50 rounded-full overflow-hidden mb-4 border-4 border-neutral-900 shadow-2xl backdrop-blur-sm">
+                        <img src="images/profile.png" alt="Albert Thursday" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <div class="md:hidden mb-2">
+                        <span class="text-xs font-bold text-neutral-400">Front End DEV / Virtual Assistant</span>
+                    </div>
+
+                    <span class="text-xs tracking-[0.5em] text-green-400 mb-2 uppercase">ALBERT</span>
+                    <h1 class="text-5xl md:text-7xl font-bold tracking-tighter gradient-text uppercase">Thursday</h1>
+                </div>
+
+                <div class="text-center md:text-left text-sm text-neutral-400 max-w-xs mx-auto">
+                    <p>Hi, I'm Thursday, a dedicated Front End Developer and Virtual Assistant focused on building seamless digital experiences and providing high-level administrative support.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 mt-8 opacity-60 md:opacity-40 grayscale hover:grayscale-0 transition-all">
+                <span class="font-bold text-sm md:text-base">HTML</span>
+                <span class="font-bold text-sm md:text-base">CSS</span>
+                <span class="font-bold text-sm md:text-base">JS</span>
+                <span class="font-semibold text-sm md:text-base">React</span>
+                <span class="font-medium text-sm md:text-base">Tailwind</span>
+                <span class="font-medium text-sm md:text-base">Excel</span>
+                <span class="font-medium text-sm md:text-base">Notion</span>
+            </div>
+        </header>
+
+        <hr class="border-neutral-800/50 max-w-5xl mx-auto mb-12">
+
+        <section class="max-w-6xl mx-auto mb-16 md:mb-20">
+            <h4 class="text-xl md:text-2xl mb-6 md:mb-8 text-center md:text-left">what I do</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+                <div class="service-card p-4 rounded-xl flex items-center justify-between group cursor-pointer">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold uppercase tracking-wider">Web Development</span>
+                    </div>
+                    <i data-lucide="circle-chevron-right" class="w-6 h-6 md:w-8 md:h-8 text-green-500 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+                
+                <div class="service-card p-4 rounded-xl flex items-center justify-between group cursor-pointer">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold uppercase tracking-wider">UI/UX Implementation</span>
+                    </div>
+                    <i data-lucide="circle-chevron-right" class="w-6 h-6 md:w-8 md:h-8 text-green-500 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+
+                <div class="service-card p-4 rounded-xl flex items-center justify-between group cursor-pointer">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold uppercase tracking-wider">Data Entry & Management</span>
+                    </div>
+                    <i data-lucide="circle-chevron-right" class="w-6 h-6 md:w-8 md:h-8 text-green-500 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+
+                <div class="service-card p-4 rounded-xl flex items-center justify-between group cursor-pointer">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold uppercase tracking-wider">Email Marketing</span>
+                    </div>
+                    <i data-lucide="circle-chevron-right" class="w-6 h-6 md:w-8 md:h-8 text-green-500 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+
+                <div class="service-card p-4 rounded-xl flex items-center justify-between group cursor-pointer">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold uppercase tracking-wider">Customer Support</span>
+                    </div>
+                    <i data-lucide="circle-chevron-right" class="w-6 h-6 md:w-8 md:h-8 text-green-500 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+
+                <div class="service-card p-4 rounded-xl flex items-center justify-between group cursor-pointer">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold uppercase tracking-wider">Virtual Assistance</span>
+                    </div>
+                    <i data-lucide="circle-chevron-right" class="w-6 h-6 md:w-8 md:h-8 text-green-500 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center pb-12 md:pb-20">
+            <h5 class="text-xl mb-6 font-medium">Contact me</h5>
+            <div class="flex justify-center gap-6">
+                <a href="mailto:your@email.com" class="hover:scale-110 transition-transform p-2"><i data-lucide="mail" class="w-6 h-6 text-red-500"></i></a>
+                <a href="#" class="hover:scale-110 transition-transform p-2"><i data-lucide="instagram" class="w-6 h-6 text-pink-500"></i></a>
+                <a href="https://www.linkedin.com/in/albert-juma-62a92130b/" target="_blank" class="hover:scale-110 transition-transform p-2"><i data-lucide="linkedin" class="w-6 h-6 text-blue-500"></i></a>
+                <a href="#" class="hover:scale-110 transition-transform p-2"><i data-lucide="twitter" class="w-6 h-6 text-blue-400"></i></a>
+                <a href="#" class="hover:scale-110 transition-transform p-2"><i data-lucide="github" class="w-6 h-6 text-white"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <div id="work-view" class="hidden-view max-w-7xl mx-auto relative z-10">
+        
+        <nav class="flex justify-between items-center mb-8 md:mb-16 pt-2 md:pt-4">
+            <button onclick="showHome()" class="nav-btn px-4 py-2 md:px-6 rounded-full flex items-center gap-2 text-sm group">
+                <i data-lucide="arrow-left" class="w-4 h-4 text-green-500 group-hover:-translate-x-1 transition-transform"></i> 
+                Back
+            </button>
+            <h1 class="text-lg md:text-xl font-bold tracking-wider text-neutral-400">SELECTED WORKS</h1>
+        </nav>
+
+        <main>
+            <article class="project-card rounded-2xl p-4 md:p-10 mb-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center">
+                    
+                    <div class="space-y-4 md:space-y-6 order-2 lg:order-1">
+                        <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                            <span class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full border border-green-900">WEB DEV</span>
+                            <span class="px-3 py-1 bg-neutral-800 text-neutral-400 text-xs font-bold rounded-full border border-neutral-700">APPLE STYLE</span>
+                        </div>
+                        
+                        <h2 class="text-3xl md:text-5xl font-bold leading-tight">Thursday 4 iPhones</h2>
+                        <p class="text-neutral-400 leading-relaxed text-sm md:text-lg">
+                            A responsive, high-fidelity web showcase mimicking the premium aesthetic of Apple's product pages. This project demonstrates advanced CSS layout techniques, smooth scrolling animations, and responsive design principles.
+                        </p>
+
+                        <div class="pt-4">
+                            <a href="https://shmdah.github.io/THURSDAY-4-IPHONES/" target="_blank" class="w-full md:w-auto flex justify-center items-center gap-2 bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-green-400 hover:scale-105 transition-all">
+                                Visit Live Site <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-4 order-1 lg:order-2">
+                        <div class="w-full h-48 md:h-64 bg-neutral-800 rounded-xl overflow-hidden border border-neutral-700 group">
+                            <img src="images/thursday4store1.png" 
+                                 alt="Thursday 4 iPhones Store Preview 1" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        
+                        <div class="w-full h-32 md:h-48 bg-neutral-800 rounded-xl overflow-hidden border border-neutral-700 group">
+                            <img src="images/thursday4store2.png" 
+                                 alt="Thursday 4 iPhones Store Preview 2" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </main>
+        
+        <footer class="text-center text-neutral-600 text-sm mt-12 pb-12">
+            <p>&copy; 2024 Thursday Portfolio</p>
+        </footer>
+    </div>
+
+    <script>
+        // 1. Initialize Icons
+        lucide.createIcons();
+
+        // 2. View Switching Logic
+        const homeView = document.getElementById('home-view');
+        const workView = document.getElementById('work-view');
+
+        function showWork() {
+            homeView.classList.add('hidden-view');
+            workView.classList.remove('hidden-view');
+            workView.classList.add('fade-in');
+            window.scrollTo(0, 0); // Scroll to top
+        }
+
+        function showHome() {
+            workView.classList.add('hidden-view');
+            homeView.classList.remove('hidden-view');
+            homeView.classList.add('fade-in');
+            window.scrollTo(0, 0); // Scroll to top
+        }
+    </script>
+</body>
+</html>
