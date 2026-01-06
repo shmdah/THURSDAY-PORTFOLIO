@@ -204,8 +204,44 @@
             <h1 class="text-lg md:text-xl font-bold tracking-wider text-neutral-400">SELECTED WORKS</h1>
         </nav>
 
-        <main>
-            <article class="project-card rounded-2xl p-4 md:p-10 mb-12">
+        <main class="space-y-12"> <article class="project-card rounded-2xl p-4 md:p-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center">
+                    
+                    <div class="space-y-4 md:space-y-6 order-2 lg:order-1">
+                        <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                            <span class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full border border-green-900">WEB DEVELOPMENT</span>
+                            <span class="px-3 py-1 bg-neutral-800 text-neutral-400 text-xs font-bold rounded-full border border-neutral-700">UI DESIGN</span>
+                        </div>
+                        
+                        <h2 class="text-3xl md:text-5xl font-bold leading-tight">Thursday Luxury Cars</h2>
+                        <p class="text-neutral-400 leading-relaxed text-sm md:text-lg">
+                            A high-end vehicle rental platform designed for elegance and speed. Features a modern fleet showcase, seamless booking functionality, and a luxurious dark-themed aesthetic that emphasizes premium service.
+                        </p>
+
+                        <div class="pt-4">
+                            <a href="https://shmdah.github.io/THURSDAY-LUXURY-CAR-RENTAL/" target="_blank" class="w-full md:w-auto flex justify-center items-center gap-2 bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-green-400 hover:scale-105 transition-all">
+                                Visit Live Site <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-4 order-1 lg:order-2">
+                        <div class="w-full h-48 md:h-64 bg-neutral-800 rounded-xl overflow-hidden border border-neutral-700 group">
+                            <img src="images/carrental1.png" 
+                                 alt="Luxury Car Rental Preview 1" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        
+                        <div class="w-full h-32 md:h-48 bg-neutral-800 rounded-xl overflow-hidden border border-neutral-700 group">
+                             <img src="images/carrental2.png" 
+                                 alt="Luxury Car Rental Preview 2" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card rounded-2xl p-4 md:p-10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center">
                     
                     <div class="space-y-4 md:space-y-6 order-2 lg:order-1">
@@ -239,9 +275,9 @@
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                     </div>
-
                 </div>
             </article>
+
         </main>
         
         <footer class="text-center text-neutral-600 text-sm mt-12 pb-12">
